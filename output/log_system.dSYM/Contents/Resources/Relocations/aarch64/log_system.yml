@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/mathiaskneipp/Documents/UdeSA/Cuatrimestre_3/Paradigmas/homework1/output/log_system'
+relocations:     []
+...

@@ -34,13 +34,13 @@ int** create_matrix(int n) {
     /*
     Crea una matriz NxN con numeros del 1 al n^2
     */
-    int** matrix = (int**) malloc(n * sizeof(int*));
+    int** matrix = (int**) malloc((size_t) n * sizeof(int*));
     if (matrix == NULL) {
         throw "No se pudo crear la matriz";
         return NULL;
     }
     for (int i = 0; i < n; i++) {
-        matrix[i] = (int*) malloc(n * sizeof(int));
+        matrix[i] = (int*) malloc((size_t) n * sizeof(int));
         if (matrix[i] == NULL) {
             throw "No se pudo crear la matriz";
             destroy_matrix(matrix, i);
