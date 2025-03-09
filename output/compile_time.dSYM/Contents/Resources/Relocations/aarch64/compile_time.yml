@@ -1,0 +1,17 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/mathiaskneipp/Documents/UdeSA/Cuatrimestre_3/Paradigmas/homework1/output/compile_time'
+relocations:
+  - { offset: 0x5C71, size: 0x8, addend: 0x0, symName: __ZStL8__ioinit, symObjAddr: 0x2E742, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offset: 0x5F38, size: 0x8, addend: 0x0, symName: __ZNSt6chronomiIxSt5ratioILl1ELl1000000000EExS2_EENSt11common_typeIJNS_8durationIT_T0_EENS4_IT1_T2_EEEE4typeERKS7_RKSA_, symObjAddr: 0x3B4, symBinAddr: 0x100003A8C, symSize: 0x64 }
+  - { offset: 0x5FA1, size: 0x8, addend: 0x0, symName: __ZNSt6chrono13duration_castINS_8durationIxSt5ratioILl1ELl1000000000EEEExS3_EENSt9enable_ifIXsrNS_13__is_durationIT_EE5valueES7_E4typeERKNS1_IT0_T1_EE, symObjAddr: 0x39C, symBinAddr: 0x100003A74, symSize: 0x18 }
+  - { offset: 0x5FEB, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x31C, symBinAddr: 0x1000039F4, symSize: 0x80 }
+  - { offset: 0x6009, size: 0x8, addend: 0x0, symName: __Z21high_resolution_clockPFvvE, symObjAddr: 0x27C, symBinAddr: 0x100003954, symSize: 0xA0 }
+  - { offset: 0x6061, size: 0x8, addend: 0x0, symName: __ZNKSt6chrono10time_pointINS_3_V212system_clockENS_8durationIxSt5ratioILl1ELl1000000000EEEEE16time_since_epochEv, symObjAddr: 0x264, symBinAddr: 0x10000393C, symSize: 0x18 }
+  - { offset: 0x608B, size: 0x8, addend: 0x0, symName: __ZNSt6chronomiINS_3_V212system_clockENS_8durationIxSt5ratioILl1ELl1000000000EEEES6_EENSt11common_typeIJT0_T1_EE4typeERKNS_10time_pointIT_S8_EERKNSC_ISD_S9_EE, symObjAddr: 0x228, symBinAddr: 0x100003900, symSize: 0x3C }
+  - { offset: 0x60E5, size: 0x8, addend: 0x0, symName: __Z7procesov, symObjAddr: 0x16C, symBinAddr: 0x100003844, symSize: 0xBC }
+  - { offset: 0x6140, size: 0x8, addend: 0x0, symName: __Z19proceso_compilacionv, symObjAddr: 0xE4, symBinAddr: 0x1000037BC, symSize: 0x88 }
+  - { offset: 0x619F, size: 0x8, addend: 0x0, symName: __Z21recursive_comparationPKcS0_i, symObjAddr: 0x40, symBinAddr: 0x100003718, symSize: 0xA4 }
+  - { offset: 0x61E8, size: 0x8, addend: 0x0, symName: __ZNKSt6chrono8durationIxSt5ratioILl1ELl1000000000EEE5countEv, symObjAddr: 0x28, symBinAddr: 0x100003700, symSize: 0x18 }
+  - { offset: 0x6244, size: 0x8, addend: 0x0, symName: __ZNSt6chrono8durationIxSt5ratioILl1ELl1000000000EEEC1IxvEERKT_, symObjAddr: 0x0, symBinAddr: 0x1000036D8, symSize: 0x28 }
+...

@@ -31,9 +31,6 @@ void print_matrix(int** matrix, int n) {
 }
 
 int** create_matrix(int n) {
-    /*
-    Crea una matriz NxN con numeros del 1 al n^2
-    */
     int** matrix = (int**) malloc((size_t) n * sizeof(int*));
     if (matrix == NULL) {
         throw "No se pudo crear la matriz";
