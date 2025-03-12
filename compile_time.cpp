@@ -15,18 +15,19 @@ constexpr bool recursive_comparation_constexpr(const char *string1, const char *
 
 void proceso_compilacion() {
     constexpr const char *string1 = "Este es un string de mas de 64 caracteres de largo para comparar las cadenas.";
-    constexpr const char *string2 = "Este es un string de mas de 64 caracteres de largo para comparar las cadenas. 0";
+    constexpr const char *string2 = "Este es un string distinto de mas de 64 caracteres de largo para comparar las cadenas.";
     constexpr bool result1 = recursive_comparation_constexpr(string1, string1);
     constexpr bool result2 = recursive_comparation_constexpr(string1, string2);
     std::cout << "La comparacion de strings iguales es: " << result1 << std::endl;
     std::cout << "La comparacion de strings distintos es: " << result2 << std::endl;
 }
+
 void proceso() {
     const char *string1 = "Este es un string de mas de 64 caracteres de largo para comparar las cadenas.";
-    const char *string2 = "Este es un string de mas de 64 caracteres de largo para comparar las cadenas. 0";
+    const char *string2 = "Este es un string distinto de mas de 64 caracteres de largo para comparar las cadenas. ";
     /*
-    Elegi char* ...
-    */
+     * Elegi char* ...
+     */
     bool result1 = recursive_comparation(string1, string1, 0);
     bool result2 = recursive_comparation(string1, string2, 0);
     std::cout << "La comparacion de strings iguales es: " << result1 << std::endl;
@@ -54,4 +55,4 @@ int main() {
 /*
  * La comparacion en tiempo de compilación es instantanea, a diferencia de la comparacion en tiempo de ejecucion, 
  * porque el compilador ya tiene el resultado preguardado.
-*/
+ */

@@ -1,0 +1,13 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/mathiaskneipp/Documents/UdeSA/Cuatrimestre_3/Paradigmas/homework1/output/matrix'
+relocations:
+  - { offset: 0x514D, size: 0x8, addend: 0x0, symName: __ZStL8__ioinit, symObjAddr: 0x16E01, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offset: 0x52AE, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x35C, symBinAddr: 0x100003C60, symSize: 0x68 }
+  - { offset: 0x52FB, size: 0x8, addend: 0x0, symName: __Z13create_matrixi, symObjAddr: 0x260, symBinAddr: 0x100003B64, symSize: 0xFC }
+  - { offset: 0x5359, size: 0x8, addend: 0x0, symName: __Z12print_matrixPPii, symObjAddr: 0x230, symBinAddr: 0x100003B34, symSize: 0x30 }
+  - { offset: 0x5396, size: 0x8, addend: 0x0, symName: __Z15traverse_matrixPPiiPFvS0_iiiE, symObjAddr: 0x1A0, symBinAddr: 0x100003AA4, symSize: 0x90 }
+  - { offset: 0x543D, size: 0x8, addend: 0x0, symName: __Z18print_inverted_posPPiiii, symObjAddr: 0xBC, symBinAddr: 0x1000039C0, symSize: 0xE4 }
+  - { offset: 0x54B6, size: 0x8, addend: 0x0, symName: __Z11fill_matrixPPiiii, symObjAddr: 0x60, symBinAddr: 0x100003964, symSize: 0x5C }
+  - { offset: 0x5511, size: 0x8, addend: 0x0, symName: __Z14destroy_matrixPPii, symObjAddr: 0x0, symBinAddr: 0x100003904, symSize: 0x60 }
+...
