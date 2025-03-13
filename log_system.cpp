@@ -19,27 +19,15 @@ bool write_message(std::string message, Tag label, std::string rute) {
     return true;
 }
 
-std::string get_rute(bool input_rute) {
-    std::string rute = "";
-    if (input_rute) {
-        std::cout << "Ingrese la ruta: ";
-        std::cin >> rute;
-    }
-    if (rute == "") {
-        rute = "log.txt";
-    }
-    return rute;
-}
-
 void logMessage(std::string message, Tag label) {
-    std::string rute = get_rute(false);
+    std::string rute = "log.txt";
     if (!write_message(message, label, rute)) {
         throw std::runtime_error("No se pudo escribir el mensaje.");
     }
 }
 
 void logMessage(std::string error_message, std::string file, int line) {
-    std::string rute = get_rute(false);
+    std::string rute = "log.txt";
     std::string message = "Archivo: " + file + ", Línea: " + std::to_string(line) + " - " + error_message;
     if (!write_message(message, Tag::ERROR, rute)) {
         throw std::runtime_error("No se pudo escribir el mensaje.");
@@ -50,7 +38,7 @@ void logMessage(std::string access_message, std::string username) {
     if (access_message != "Access Granted" && access_message != "Access Denied") {
         throw std::runtime_error("Mensaje de acceso incorrecto.");
     }
-    std::string rute = get_rute(false);
+    std::string rute = "log.txt";
     std::string message = username + " - " + access_message;
     if (!write_message(message, Tag::SECURITY, rute)) {
         throw std::runtime_error("No se pudo escribir el mensaje.");
