@@ -2,10 +2,8 @@
 #include <memory>
 
 struct Node {
-    int* value;
+    int value;
     std::shared_ptr<Node> next = nullptr;
-    Node(int* val) : value(val) {} //Constructor
-    ~Node() { std::cout << "Nodo destruido" << std::endl; } //Destructor
 };
 
 struct List {
@@ -13,18 +11,21 @@ struct List {
     size_t size = 0;
 };
 
-std::shared_ptr<Node> create_node(int* value) {
-    return std::make_shared<Node>(value);
+std::shared_ptr<Node> create_node(int value) {
+    auto node = std::make_shared<Node>();
+    node->value = value;
+    return node;
+
 }
 
-void push_front(int* value, std::shared_ptr<List>& list) {
+void push_front(int value, std::shared_ptr<List>& list) {
     auto new_node = create_node(value);
     new_node->next = std::move(list->first_node);
     list->first_node = std::move(new_node);
     list->size++;
 }
 
-void push_back(int* value, std::shared_ptr<List>& list) {
+void push_back(int value, std::shared_ptr<List>& list) {
     auto new_node = create_node(value);
     if (list->size == 0) {
         list->first_node = new_node;
@@ -40,7 +41,7 @@ void push_back(int* value, std::shared_ptr<List>& list) {
     list->size++;
 }
 
-void insert(int* value, std::shared_ptr<List>& list, const int i) {
+void insert(int value, std::shared_ptr<List>& list, const int i) {
     if (i < 0) {
         std::cout << "El índice es inválido." << std::endl;
         return;
@@ -98,11 +99,11 @@ void print_list(std::shared_ptr<List>& list) {
         return;
     }
     auto current = list->first_node;
-    std::cout << *current->value;
+    std::cout << current->value;
     for (int j = 0; j < (int) list->size - 1; j++) {
         std::cout << " -> ";
         current = current->next;
-        std::cout << *current->value;
+        std::cout << current->value;
     }
     std::cout << std::endl;
 }
@@ -110,19 +111,25 @@ void print_list(std::shared_ptr<List>& list) {
 int main() {
     auto list = std::make_shared<List>();
 
-    int a = 1, b = 2, c = 3, d = 4;
-
-    push_back(&a, list);
-    push_back(&b, list);
-    push_back(&c, list);
-    push_back(&d, list);
+    push_back(1, list);
+    push_back(2, list);
+    push_back(3, list);
+    push_front(4, list);
+    insert(5, list, 1);
 
     std::cout << "Lista después de inserciones:" << std::endl;
     print_list(list);
+    std::cout << "El tamaño de la lista es: " << list->size << std::endl;
 
     erase(list, 2);
     std::cout << "Lista después de borrar el índice 2:" << std::endl;
     print_list(list);
+    std::cout << "El tamaño de la lista es: " << list->size << std::endl;
+
+    erase(list, 6);
+    std::cout << "Lista después de borrar un índice > a list->size:" << std::endl;
+    print_list(list);
+    std::cout << "El tamaño de la lista es: " << list->size << std::endl;
 
     return 0;
 }
