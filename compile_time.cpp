@@ -22,12 +22,9 @@ void proceso_compilacion() {
     std::cout << "La comparacion de strings distintos es: " << result2 << std::endl;
 }
 
-void proceso() {
+void proceso_ejecucion() {
     const char *string1 = "Este es un string de mas de 64 caracteres de largo para comparar las cadenas.";
     const char *string2 = "Este es un string distinto de mas de 64 caracteres de largo para comparar las cadenas. ";
-    /*
-     * Elegi char* ...
-     */
     bool result1 = recursive_comparation(string1, string1, 0);
     bool result2 = recursive_comparation(string1, string2, 0);
     std::cout << "La comparacion de strings iguales es: " << result1 << std::endl;
@@ -45,7 +42,7 @@ void high_resolution_clock(void (*miProcesoAMedir)()) {
 
 int main() {
     std::cout << "Tiempo de ejecucion: " << std::endl;
-    high_resolution_clock(proceso);
+    high_resolution_clock(proceso_ejecucion);
     std::cout << std::endl;
     std::cout << "Tiempo de compilacion: " << std::endl;
     high_resolution_clock(proceso_compilacion);
@@ -55,4 +52,6 @@ int main() {
 /*
  * La comparacion en tiempo de compilación es instantanea, a diferencia de la comparacion en tiempo de ejecucion, 
  * porque el compilador ya tiene el resultado preguardado.
+ * Use const char porque permite la evaluacion en tiempo de compilacion con constexpr,
+ * mientras que string usa memoria dinamica y funciona en tiempo de ejecucion.
  */

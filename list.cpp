@@ -1,15 +1,6 @@
+#include "list.hpp"
 #include <iostream>
 #include <memory>
-
-struct Node {
-    int value;
-    std::shared_ptr<Node> next = nullptr;
-};
-
-struct List {
-    std::shared_ptr<Node> first_node = nullptr;
-    size_t size = 0;
-};
 
 std::shared_ptr<Node> create_node(int value) {
     auto node = std::make_shared<Node>();
