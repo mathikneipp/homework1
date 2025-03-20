@@ -1,4 +1,4 @@
-#include "log_system.hpp"
+#include "log_system.h"
 #include <iostream>
 #include <fstream>
 
@@ -65,6 +65,7 @@ void test_runtime_error() {
     }
 }
 
+// Compilar y ejecutar con make run_log_system
 int main() {
     test_log_message();
     test_runtime_error();

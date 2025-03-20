@@ -10,7 +10,7 @@ enum class Tag {
 };
 
 /*
- * Pasa un tipo Tag a string.
+ * Pasa un tipo enum Tag a string.
  * Devuelve un std::string.
  */
 std::string tag_to_string(Tag level);

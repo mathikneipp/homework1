@@ -1,38 +1,29 @@
 CXX = g++
 CXXFLAGS = -Wall -Wextra -std=c++17 -g
 
-# Archivos fuente y sus objetos
-SRCS = matrix.cpp compile_time.cpp log_system.cpp list.cpp
-OBJS = $(SRCS:.cpp=.o)
-HEADERS = matrix.hpp compile_time.hpp log_system.hpp list.hpp
+# Ejecutables individuales
+TARGET_MATRIX = matrix_exec
+TARGET_COMPILE_TIME = compile_time_exec
+TARGET_LOG_SYSTEM = log_system_exec
+TARGET_LIST = list_exec
 
-# Ejecutable
-TARGET = main
+# Reglas para compilar y ejecutar cada archivo individualmente
+run_matrix: matrix.cpp matrix.h
+	$(CXX) $(CXXFLAGS) -o $(TARGET_MATRIX) matrix.cpp
+	./$(TARGET_MATRIX)
 
-all: $(TARGET)
+run_compile_time: compile_time.cpp compile_time.h
+	$(CXX) $(CXXFLAGS) -o $(TARGET_COMPILE_TIME) compile_time.cpp
+	./$(TARGET_COMPILE_TIME)
 
-# Regla para compilar el ejecutable
-$(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
+run_log_system: log_system.cpp log_system.h
+	$(CXX) $(CXXFLAGS) -o $(TARGET_LOG_SYSTEM) log_system.cpp
+	./$(TARGET_LOG_SYSTEM)
 
-# Reglas individuales para cada archivo fuente
-matrix.o: matrix.cpp matrix.hpp
-	$(CXX) $(CXXFLAGS) -c matrix.cpp -o matrix.o
+run_list: list.cpp list.h
+	$(CXX) $(CXXFLAGS) -o $(TARGET_LIST) list.cpp
+	./$(TARGET_LIST)
 
-compile_time.o: compile_time.cpp compile_time.hpp
-	$(CXX) $(CXXFLAGS) -c compile_time.cpp -o compile_time.o
-
-log_system.o: log_system.cpp log_system.hpp
-	$(CXX) $(CXXFLAGS) -c log_system.cpp -o log_system.o
-
-list.o: list.cpp list.hpp
-	$(CXX) $(CXXFLAGS) -c list.cpp -o list.o
-
-# Regla para limpiar archivos compilados
+# Regla para limpiar todos los ejecutables generados
 clean:
-	rm -f $(OBJS) $(TARGET)
-
-# Regla para ejecutar el programa
-run: $(TARGET)
-	./$(TARGET)
-	
+	rm -f $(TARGET_MATRIX) $(TARGET_COMPILE_TIME) $(TARGET_LOG_SYSTEM) $(TARGET_LIST)
